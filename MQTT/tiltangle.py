@@ -4,7 +4,7 @@ import random
 import json
 
 mqttBroker ="test.mosquitto.org"
-client = mqtt.Client (client_id="Simulaattori771", clean_session=True)
+client = mqtt.Client (client_id="YourClientID", clean_session=True)
 client.connect(mqttBroker, port=1883)
 i = 1
 while i < 10:
@@ -19,7 +19,7 @@ while i < 10:
     type(values)
 
 
-    client.publish("ArkPy/Tila/Sensor", values)
+    client.publish("YourClientTopic", values)
     print("Published " + str(sensorTemp) + " to topic Temperature" + " and " + str(sensorHum) + " to topic Humidity" )
 
     time.sleep(5)
